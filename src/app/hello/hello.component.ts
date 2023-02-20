@@ -1,8 +1,20 @@
-import { Component } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "custom-hello",
-  template: `<p>Hello world!</p>`
+  templateUrl: "./hello.component.html",
+  styleUrls: [
+    "./hello.component.css"
+  ]
 })
 export class HelloComponent{
+  @Input() name:string;
+  @Output() sayHello:EventEmitter<string> = new EventEmitter<string>();
+
+  constructor(){
+  }
+
+  onNameClick() {
+    this.sayHello.emit("Hello!");
+  }
 }
