@@ -1,8 +1,19 @@
-
-<div style="text-align:center">
-  <h1>
+<div style="text-align: center">
+  <!-- Style binding, se especifica la propiedad de estilo afectada y se iguala a un valor (con el ternario aplicamos una condición también en este caso) -->
+  <h1
+    [style.font-size.%]="myHelloComponent.namesList.length > 0 ? 200 : 150"
+    [style.color]="myHelloComponent.namesList.length > 0 ? 'red' : 'black'"
+  >
     Let's learn Angular
   </h1>
-  <div>Writting "{{myHelloComponent.inputName}}" in HelloComponent</div>
-  <custom-hello #myHelloComponent [name]="myName" (sayHello)="onSayHello($event)"></custom-hello>
+  <!-- Class binding, se iguala a la condición que debe darse para que se aplique el selector de clase ("hidden") -->
+  <div [class.hidden]="myHelloComponent.inputName.length == 0">
+    Writting "{{ myHelloComponent.inputName }}" in HelloComponent
+  </div>
+  <br />
+  <custom-hello
+    #myHelloComponent
+    [name]="myName"
+    (sayHello)="onSayHello($event)"
+  ></custom-hello>
 </div>
