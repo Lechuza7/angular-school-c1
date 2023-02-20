@@ -1,11 +1,17 @@
-<div>
-  <!-- Input de binding bidireccional, en angular lo resolvemos con ngModel (ver segundo input) -->
-  <!-- <input type="text" [value]="inputName" (keyup)="updateInputName($event)"> -->
-  <input type="text" [(ngModel)]="inputName">
-  <button (click)="addName()">Add name</button>
+<!-- ngSwitch directive generada con un property binding inicial en el que establecemos una condición, y casos "true" y "false" -->
+<div [ngSwitch]="namesList.length < 5">
+  <div *ngSwitchCase="true">
+    <!-- Input de binding bidireccional, en angular lo resolvemos con ngModel (ver segundo input) -->
+    <!-- <input type="text" [value]="inputName" (keyup)="updateInputName($event)"> -->
+    <input type="text" [(ngModel)]="inputName" />
+    <button (click)="addName()">Add name</button>
+  </div>
+  <div *ngSwitchCase="false">
+    <p>You can't add more names</p>
+  </div>
 </div>
 <!-- Usamos la directiva ngFor para generar un bucle, declarando una variable y recorriendo el array de valores, generando para 
   cada uno un custom-hello component. A mayores, usamos también el índice como "i" para pintarlo en el navegador. -->
 <p *ngFor="let item of namesList; index as i" (click)="onNameClick()">
-  {{i}} - Hello {{item}}!
+  {{ i }} - Hello {{ item }}!
 </p>
