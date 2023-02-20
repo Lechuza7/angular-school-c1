@@ -12,7 +12,7 @@ export class HelloComponent{
   @Output() sayHello:EventEmitter<string> = new EventEmitter<string>();
 
   public namesList: Array<string> = [];
-  public inputName:string = "John";
+  public inputName:string = "";
 
   constructor(){
   }
@@ -27,8 +27,9 @@ export class HelloComponent{
     console.log(this.namesList);
   }
 
-  updateInputName(event:any){
+  /* Binding bidireccional, en angular lo resolvemos con ngModel */
+  /* updateInputName(event:any){
     this.inputName = event.target.value;
     console.log(this.inputName);
-  }
+  } */
 }
