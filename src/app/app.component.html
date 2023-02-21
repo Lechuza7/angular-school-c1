@@ -1,9 +1,10 @@
 <div style="text-align: center">
   <!-- Style binding, se especifica la propiedad de estilo afectada y se iguala a un valor (con el ternario aplicamos una condición también en este caso) -->
-  <h1
+<!--   <h1
     [style.font-size.%]="myHelloComponent.namesList.length > 0 ? 200 : 150"
     [style.color]="myHelloComponent.namesList.length > 0 ? 'red' : 'black'"
-  >
+  > -->
+  <h1 [ngStyle]="titleStyles">
     Let's learn Angular
   </h1>
   <!-- Class binding, se iguala a la condición que debe darse para que se aplique el selector de clase ("hidden") -->
