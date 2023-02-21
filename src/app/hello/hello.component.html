@@ -15,5 +15,7 @@
 <p *ngFor="let item of namesList; index as i" (click)="onNameClick()">
   <!-- Pipe uppercase y pipe slice, vienen dadas por angular, 1ª pasa el item a mayus, 2ª muestra sección especificada. Las
   pipes sirven para formatear datos desde el template, antes de mostrarlos. -->
-  {{ i }} - Hello {{ item | uppercase | slice:0:2 }}!
+  <!-- {{ i }} - Hello {{ item | uppercase | slice:0:2 }}! -->
+  <!-- Pipe personalizada -->
+  {{ i }} - Hello {{ item | upperCapital }}!
 </p>
