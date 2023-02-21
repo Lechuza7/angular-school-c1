@@ -8,7 +8,7 @@
   </h1>
   <!-- Class binding, se iguala a la condición que debe darse para que se aplique el selector de clase ("hidden") -->
   <div [class.hidden]="myHelloComponent.inputName.length == 0">
-    Writting "{{ myHelloComponent.inputName }}" in HelloComponent
+    Writting <span [ngClass]="updateNameClasses(myHelloComponent.inputName)">"{{ myHelloComponent.inputName }}"</span> in HelloComponent
   </div>
   <br />
   <custom-hello
